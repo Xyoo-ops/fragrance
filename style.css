@@ -1,0 +1,231 @@
+/* Tailwind configuration should be moved to a JavaScript file (e.g., tailwind.config.js). */
+
+/* Scrollbar Custom */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+body::-webkit-scrollbar-track {
+    background: #111111;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #c9a87a;
+    border-radius: 20px;
+    border: 2px solid #111111;
+}
+
+/* Background Galaksi */
+#night-sky-background {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: 
+        radial-gradient(ellipse at 20% 20%, rgba(138, 43, 226, 0.3) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 80%, rgba(75, 0, 130, 0.25) 0%, transparent 40%),
+        radial-gradient(ellipse at 40% 40%, rgba(218, 112, 214, 0.2) 0%, transparent 40%),
+        radial-gradient(ellipse at 60% 60%, rgba(147, 112, 219, 0.25) 0%, transparent 40%),
+        radial-gradient(ellipse at bottom, #1a0630 0%, #0d001a 70%, #000000 100%);
+    z-index: -1;
+    overflow: hidden;
+    opacity: 1;
+}
+
+#night-sky-background::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 200%; height: 200%;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(201, 168, 122, 0.1) 0%, transparent 10%),
+        radial-gradient(circle at 70% 70%, rgba(138, 43, 226, 0.15) 0%, transparent 15%),
+        radial-gradient(circle at 50% 20%, rgba(75, 0, 130, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 20% 80%, rgba(218, 112, 214, 0.1) 0%, transparent 12%);
+    animation: rotateGalaxy 180s linear infinite;
+}
+
+#night-sky-background::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: 
+        radial-gradient(circle at 60% 40%, rgba(201, 168, 122, 0.05) 0%, transparent 8%),
+        radial-gradient(circle at 40% 60%, rgba(255, 215, 0, 0.03) 0%, transparent 6%);
+    animation: pulseGalaxy 20s ease-in-out infinite alternate;
+}
+
+/* Bintang */
+.star {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle var(--twinkle-duration) infinite alternate;
+}
+
+.star.small {
+    width: 1px;
+    height: 1px;
+    background: #ffffff;
+    box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.8);
+}
+
+.star.medium {
+    width: 2px;
+    height: 2px;
+    background: #fffedf;
+    box-shadow: 0 0 6px 2px rgba(255, 254, 223, 0.7);
+}
+
+.star.large {
+    width: 3px;
+    height: 3px;
+    background: #ffeb3b;
+    box-shadow: 0 0 10px 3px rgba(255, 235, 59, 0.6);
+}
+
+.star.gold {
+    width: 2px;
+    height: 2px;
+    background: #ffd700;
+    box-shadow: 0 0 8px 2px rgba(255, 215, 0, 0.8);
+}
+
+/* Shooting Star */
+.shooting-star {
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 1) 30%, 
+        rgba(201, 168, 122, 1) 70%, 
+        rgba(255, 215, 0, 0) 100%);
+    border-radius: 50%;
+    filter: blur(1px);
+    transform: rotate(-45deg);
+    animation: shootingStar var(--shooting-duration) linear infinite;
+    opacity: 0;
+}
+
+.shooting-star::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        rgba(201, 168, 122, 0.8) 0%, 
+        rgba(255, 215, 0, 0.4) 30%, 
+        rgba(255, 255, 255, 0) 100%);
+    border-radius: 50%;
+    filter: blur(2px);
+}
+
+/* Konstelasi */
+.constellation {
+    position: absolute;
+    opacity: 0.1;
+}
+
+.constellation-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 168, 122, 0.5), transparent);
+    transform-origin: left center;
+}
+
+/* Animations */
+@keyframes rotateGalaxy {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes pulseGalaxy {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
+}
+
+@keyframes twinkle {
+    0%, 100% { 
+        opacity: 0.1;
+        transform: scale(0.8);
+    }
+    50% { 
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes shootingStar {
+    0% { 
+        transform: translateX(-100px) translateY(-100px) rotate(-45deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(calc(100vw + 100px)) translateY(calc(100vh + 100px)) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+@keyframes kenBurns {
+    0% {
+        transform: scale(1.1) translate(0, 0);
+    }
+    100% {
+        transform: scale(1) translate(-2%, -2%);
+    }
+}
+
+.hero-bg-image {
+    animation: kenBurns 30s infinite alternate ease-in-out;
+}
+
+/* FAQ Styling */
+details {
+    background-color: #1f1f1f;
+    border: 1px solid rgba(201, 168, 122, 0.2);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: background-color 0.2s;
+}
+
+details:hover {
+    background-color: #2a2a2a;
+}
+
+details summary {
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #c9a87a;
+    list-style: none;
+    position: relative;
+    outline: none;
+}
+
+details summary::after {
+    content: '+';
+    position: absolute;
+    right: 1rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.2s ease-in-out;
+}
+
+details[open] summary::after {
+    transform: rotate(45deg);
+}
+
+details div {
+    padding: 0 1rem 1rem 1rem;
+    color: #d1d5db;
+    border-top: 1px solid rgba(201, 168, 122, 0.1);
+    margin-top: 0.5rem;
+    animation: fadeInUp 0.4s ease-out;
+}

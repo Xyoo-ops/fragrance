@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÉLÉGANCE | Parfum Niche Mewah</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-gray-200 font-sans">
+    
+    <!-- Background Bintang -->
+    <div id="night-sky-background"></div>
+
+    <!-- NOTIFICATION SYSTEM -->
+    <div id="notification" class="fixed top-20 right-4 z-50 bg-zinc-900 text-white px-6 py-3 rounded-lg shadow-xl border border-brand-gold-400/20 max-w-sm opacity-0 translate-x-full transition-all duration-500"></div>
+
+    <!-- HEADER -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 py-5 bg-black/70 backdrop-blur-sm border-b border-brand-gold-400/10">
+        <!-- Navigasi dan logo -->
+    </header>
+
+    <!-- SEARCH MODAL -->
+    <div id="search-modal" class="fixed top-0 left-0 w-full h-full bg-black/90 backdrop-blur-sm z-50 flex flex-col pt-24 hidden">
+        <!-- Modal pencarian -->
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" class="min-h-screen pt-24">
+        <!-- Halaman Beranda -->
+        <div id="beranda" class="page container mx-auto px-6 md:px-12 py-12">
+            <!-- Hero section dan konten beranda -->
+        </div>
+
+        <!-- Halaman Produk -->
+        <div id="produk" class="page hidden container mx-auto px-6 md:px-12 py-12 animate-fade-in-up">
+            <!-- Daftar produk dan filter -->
+        </div>
+
+        <!-- Modal Detail Produk -->
+        <div id="product-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+            <!-- Detail produk lengkap -->
+        </div>
+
+        <!-- Halaman Cart -->
+        <div id="cart" class="page hidden container mx-auto px-6 md:px-12 py-12 animate-fade-in-up">
+            <!-- Keranjang belanja -->
+        </div>
+
+        <!-- Halaman Wishlist -->
+        <div id="wishlist" class="page hidden container mx-auto px-6 md:px-12 py-12 animate-fade-in-up">
+            <!-- Daftar wishlist -->
+        </div>
+
+        <!-- Halaman Checkout -->
+        <div id="checkout" class="page hidden px-6 md:px-12 pt-12">
+            <!-- Proses checkout multi-step -->
+        </div>
+
+        <!-- Halaman FAQ -->
+        <div id="faq" class="page hidden container mx-auto px-6 md:px-12 py-12 animate-fade-in-up">
+            <!-- FAQ dengan accordion -->
+        </div>
+
+        <!-- Halaman Kebijakan -->
+        <div id="policy" class="page hidden container mx-auto px-6 md:px-12 py-12 animate-fade-in-up">
+            <!-- Kebijakan pengembalian -->
+        </div>
+
+        <!-- Halaman Syarat & Ketentuan -->
+        <div id="terms" class="page hidden container mx-auto px-6 md:px-12 py-12 animate-fade-in-up">
+            <!-- Syarat dan ketentuan -->
+        </div>
+    </main>
+
+    <!-- AI Chatbot -->
+    <button id="chatbot-toggle" onclick="toggleChatbot()" class="fixed bottom-6 right-6 z-50 p-4 bg-brand-gold-400 text-black rounded-full shadow-2xl hover:bg-brand-gold-300 transition-all animate-pulse-slow">
+        <!-- Tombol chatbot -->
+    </button>
+    <div id="chatbot-window" class="fixed bottom-20 right-6 z-50 w-80 h-96 bg-zinc-900 border border-brand-gold-400/30 rounded-lg shadow-2xl flex flex-col hidden">
+        <!-- Window chatbot -->
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="bg-zinc-900 py-12 mt-20 border-t border-brand-gold-400/10">
+        <!-- Footer dengan link dan newsletter -->
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
